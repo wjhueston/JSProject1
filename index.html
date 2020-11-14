@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tabs</title>
+    <title>Order an Honest Pizza!</title>
     <!-- Bootstrap styles first -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Our styles -->
     <link href="pizzaStyles.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body id="page">
     <div class="container">
+        <div id="pizzaHero"></div>
+        <h1>Honest Will's Pizza and <span id="footMassageToolTip">Foot Massage<span id="fmDisclaimer">We had to let our masseuse go due to the pandemic. She will return!</span></span></h1>
+        <!--I used the tab demo as a skeleton, and because it already had three tabs organized.-->
         <nav>
             <ul id="tabs" class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="#crust">Pizza Details</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#delivery">Delivery Info</a>
+                    <a class="nav-link" href="#delivery" id="deliveryTab">Delivery Info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#confirm">Order Confirmation</a>
+                    <a class="nav-link" href="#confirm" id="confirmTab">Order Confirmation</a>
                 </li>
             </ul>
         </nav>
-
+        <!--The first tab. This one accepts pizza-related information from the user-->
         <div class="tab-content">
 
             <div id="crust" class="tab-pane active">
@@ -76,25 +80,117 @@
                     <label for="Jalapeños">Jalapeños</label><br>
                     <button id="veggiesSubmit">Submit</button>
                 </form>
-                <h3>Your pizza's details:</h3>
-                <span id="pizzaSize"></span><br>
-                <span id="pizzaCrust"></span><br>
-                <span id="pizzaMeats"></span><br>
-                <span id="pizzaVeggies"></span>
-            </div>
+                <br><br>
+                <div id="pizzaDetails">
+                    <h3>Your pizza's details:</h3>
+                    <span id="pizzaSize"></span><br>
+                    <span id="pizzaCrust"></span><br>
+                    <span id="pizzaMeats"></span><br>
+                    <span id="pizzaVeggies"></span>
+                </div>
 
+                <p id="endPizzaDetails">That's all the info we need. Meet you on the Delivery tab!</p>
+            </div>
+            <!--The second tab. Accepts information pertinent to delivering a pizza: Name, Address, Phone number.-->
             <div id="delivery" class="tab-pane">
-                <h2>Thanks for visiting Tab 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam fuga mollitia repudiandae sit
-                    voluptate? Adipisci delectus et molestiae natus omnis quis, vitae voluptatem voluptatibus.
-                    Quisquam?</p>
-            </div>
+                <h2>Enter your Delivery Info</h2><br>
+                <form id="deliveryDetails">
+                    <label for="firstName">First Name</label>
+                    <input name="firstName" id="firstName" type="text" class="form-control" required="required"><br>
+                    <label for="lastName">Last Name</label>
+                    <input name="lastName" id="lastName" type="text" class="form-control" required="required"><br>
+                    <label for="addressLineOne">Address Line One</label>
+                    <input name="addressLineOne" id="addressLineOne" type="text" class="form-control" required="required"><br>
+                    <label for="addressLineTwo">Address Line Two</label>
+                    <input name="addressLineTwo" id="addressLineTwo" type="text" class="form-control"><br>
+                    <label for="city">City</label>
+                    <input name="city" id="city" type="text" class="form-control" required="required"><br>
+                    <label for="postalCode">Postal Code</label>
+                    <input name="postalCode" id="postalCode" type="text" class="form-control" required="required"><br>
+                    <label for="phoneNumber">Phone Number</label>
+                    <input name="phoneNumber" id="phoneNumber" type="tel" class="form-control" required="required"><br>
+                    <button id="infoSubmit">Submit</button>
+                </form>
 
+                <p id="endContactDetails">Thanks for the info, meet you on the order confirmation tab!</p>
+            </div>
+            <!--The third tab. Parrots back all the info entered by the user. This is where the scope of the assignment ends, so there's nothing to click once you get here.-->
             <div id="confirm" class="tab-pane">
-                <h2>Tab 3 is the best tab</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aspernatur commodi deleniti
-                    dignissimos dolores dolorum ea eum excepturi omnis, quos, repellat saepe sed soluta!</p>
-                <img src="img/die.png" alt="Six sided die" height="225" width="225"/>
+                <h2>Thanks for ordering a pizza. Here's what you selected</h2>
+                <h4>Your Pizza's Info</h4>
+                <table>
+                    <tr>
+                        <th>Detail</th>
+                        <th id="costAlign">Cost</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="sizeConfirm"></span>
+                        </td>
+                        <td id="sizeAlign">
+                            <span id="sizePrice"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="crustConfirm"></span>
+                        </td>
+                        <td id="crustAlign">
+                            <span id="crustPrice"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="meatsConfirm"></span>
+                        </td>
+                        <td id="meatsAlign">
+                            <span id="meatsPrice"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="veggiesConfirm"></span>
+                        </td>
+                        <td id="veggiesAlign">
+                            <span id="veggiesPrice"></span>
+                        </td>
+                    </tr>
+                    <tr class="blankRow">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td id="subtotalAlign"><span id="subtotal"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tax:</td>
+                        <td id="taxAlign"><span id="taxAmount"></span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Delivery Fee:
+                        </td>
+                        <td id="deliveryAlign">
+                            2.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total:
+                        </td>
+                        <td id="totalAlign">
+                            <span id="total"></span>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <div id="customerInfo">
+                    <h4>Your Info</h4>
+                    <span id="firstAndLast"></span><br>
+                    <span id="address"></span><br>
+                    <span id="cityAndZip"></span><br>
+                    <span id="phone"></span>
+                </div>
             </div>
         </div>
     </div>

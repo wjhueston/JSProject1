@@ -1,22 +1,22 @@
 body {
     padding: 25px;
-    background-color: blanchedalmond;
+    background-color: red;
 }
 
 .tab-pane {
     padding: 10px;
 }
 #crust {
-    background-color: red;
+    background-color: white;
 }
 
 #delivery {
-    background-color: green;
+    background-color: white;
+
 }
 
 #confirm {
-    background-color: blue;
-    color: aliceblue;
+    background-color: white;
 }
 #crustDetails{
     display: none;
@@ -45,6 +45,63 @@ body {
 #aptooltip:hover #alpastorDisclaimer {
     visibility: visible;
 }
+#footMassageToolTip{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#footMassageToolTip #fmDisclaimer {
+    visibility: hidden;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 11pt;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+#footMassageToolTip:hover #fmDisclaimer{
+    visibility: visible;
+}
 #veggiesDetails{
     display: none;
+}
+#endPizzaDetails{
+    display: none;
+}
+#deliveryTab{
+    visibility: hidden;
+}
+#confirmTab{
+    visibility: hidden;
+}
+#endContactDetails{
+    display: none;
+}
+.blankRow{
+    height: 10px;
+}
+#pizzaHero{height: 300px; background-image: url("pizzaHero.jpeg") ; background-size: 100%    100%; margin-bottom: 1em;}
+.nav-tabs > li > a{
+    color: green !important;
+    font-weight: bold;
+}
+.nav-tabs > li > a:hover{
+    background-color: green !important;
+    border: medium none;
+    border-radius: 0;
+    color:white !important;
+}
+#pizzaDetails{
+    display: none;
+}
+td{
+    padding-right: 10px;
+    margin-right: 10px;
+}
+#sizeAlign,#crustAlign,#meatsAlign,#veggiesAlign,#deliveryAlign,#taxAlign,#totalAlign,#subtotalAlign{
+    text-align: right;
 }
