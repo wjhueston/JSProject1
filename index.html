@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Our styles -->
-    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <link href="pizzaStyles.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body id="page">
@@ -15,38 +15,82 @@
         <nav>
             <ul id="tabs" class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link active" href="#crust">Pizza Details</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#shop">Shop</a>
+                    <a class="nav-link" href="#delivery">Delivery Info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#confirm">Order Confirmation</a>
                 </li>
             </ul>
         </nav>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane active">
-                <h2>This is Tab 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur officia quisquam
-                    repellendus sequi? Ad architecto aut dicta labore molestias nulla perferendis recusandae vel
-                    veritatis.</p>
-                <p>
-                    <img src="img/Ham-Sandwich.jpg" alt="Ham sandwich" id="sandwich">
-                    <br>
-                    <button id="animateButton">Animate!</button>
-                </p>
+
+            <div id="crust" class="tab-pane active">
+                <h2>Build your pizza</h2><br><br>
+                <form id="sizeDetails">
+                    <h4>Select size:</h4>
+                    <input name="size" id="Small" type="radio" data-size="Small">
+                    <label for="Small">Small</label><br>
+                    <input name="size" id="Medium" type="radio" data-size="Medium">
+                    <label for="Medium">Medium</label><br>
+                    <input name="size" id="Large" type="radio" data-size="Large">
+                    <label for="Large">Large</label><br><br><br>
+                </form>
+                <form id="crustDetails">
+                    <h4>Select crust style:</h4>
+                    <input name="crust" id="Thin" type="radio" data-crust="Thin">
+                    <label for="Thin">Thin</label><br>
+                    <input name="crust" id="Hand Tossed" type="radio" data-crust="Hand Tossed">
+                    <label for="Hand Tossed">Hand Tossed</label><br>
+                    <input name="crust" id="Vegan" type="radio" data-crust="Vegan">
+                    <label for="Vegan">Vegan</label><br><br><br>
+                </form>
+                <form id="meatsDetails">
+                    <h4>Select meats:</h4>
+                    <input name="meats" id="Pepperoni" type="checkbox" data-meats="Pepperoni">
+                    <label for="Pepperoni">Pepperoni</label><br>
+                    <input name="meats" id="Italian Sausage" type="checkbox" data-meats="Italian Sausage">
+                    <label for="Italian Sausage">Italian Sausage</label><br>
+                    <input name="meats" id="Bacon" type="checkbox" data-meats="Bacon">
+                    <label for="Bacon">Bacon</label><br>
+                    <input name="meats" id="Canadian Bacon" type="checkbox" data-meats="Canadian Bacon">
+                    <label for="Canadian Bacon">Canadian Bacon</label><br>
+                    <input name="meats" id="Al Pastor" type="checkbox" data-meats="Al Pastor">
+                    <label for="Al Pastor"><span id="aptooltip">Al Pastor<span id="alpastorDisclaimer">Al Pastor is Mexican-Style Spit-Roasted Pork with a variety of spices!</span></span></label><br>
+                    <button id="meatsSubmit">Submit</button>
+                </form>
+                <form id="veggiesDetails">
+                    <h4>Select veggies:</h4>
+                    <input name="veggies" id="Onions" type="checkbox" data-veggies="Onions">
+                    <label for="Onions">Onions</label><br>
+                    <input name="veggies" id="Mushrooms" type="checkbox" data-veggies="Mushrooms">
+                    <label for="Mushrooms">Mushrooms</label><br>
+                    <input name="veggies" id="Green Peppers" type="checkbox" data-veggies="Green Peppers">
+                    <label for="Green Peppers">Green Peppers</label><br>
+                    <input name="veggies" id="Olives" type="checkbox" data-veggies="Olives">
+                    <label for="Olives">Olives</label><br>
+                    <input name="veggies" id="Jalapeños" type="checkbox" data-veggies="Jalapeños">
+                    <label for="Jalapeños">Jalapeños</label><br>
+                    <button id="veggiesSubmit">Submit</button>
+                </form>
+                <h3>Your pizza's details:</h3>
+                <span id="pizzaSize"></span><br>
+                <span id="pizzaCrust"></span><br>
+                <span id="pizzaMeats"></span><br>
+                <span id="pizzaVeggies"></span>
             </div>
 
-            <div id="shop" class="tab-pane">
+            <div id="delivery" class="tab-pane">
                 <h2>Thanks for visiting Tab 2</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam fuga mollitia repudiandae sit
                     voluptate? Adipisci delectus et molestiae natus omnis quis, vitae voluptatem voluptatibus.
                     Quisquam?</p>
             </div>
 
-            <div id="contact" class="tab-pane">
+            <div id="confirm" class="tab-pane">
                 <h2>Tab 3 is the best tab</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aspernatur commodi deleniti
                     dignissimos dolores dolorum ea eum excepturi omnis, quos, repellat saepe sed soluta!</p>
@@ -61,7 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Our code last -->
-    <script src="tabs.js"></script>
+    <script src="code.js"></script>
 
 </body>
 
